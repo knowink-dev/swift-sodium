@@ -31,7 +31,6 @@
 #include "crypto_onetimeauth_poly1305.h"
 #include "crypto_pwhash.h"
 #include "crypto_pwhash_argon2i.h"
-#include "crypto_pwhash_scryptsalsa208sha256.h"
 #include "crypto_scalarmult.h"
 #include "crypto_scalarmult_curve25519.h"
 #include "crypto_secretbox.h"
