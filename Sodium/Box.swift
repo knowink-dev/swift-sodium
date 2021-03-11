@@ -1,5 +1,5 @@
 import Foundation
-import Clibsodium
+@_implementationOnly import Clibsodium
 
 public struct Box {
     public let MacBytes = Int(crypto_box_macbytes())

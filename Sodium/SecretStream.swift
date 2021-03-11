@@ -1,5 +1,5 @@
 import Foundation
-import Clibsodium
+@_implementationOnly import Clibsodium
 
 public struct SecretStream {
     public let xchacha20poly1305 = XChaCha20Poly1305()
@@ -25,7 +25,7 @@ extension SecretStream.XChaCha20Poly1305 {
 
 
 extension SecretStream.XChaCha20Poly1305 {
-    public class PushStream {
+    class PushStream {
         private var state: crypto_secretstream_xchacha20poly1305_state
         private var _header: Header
 
@@ -45,7 +45,7 @@ extension SecretStream.XChaCha20Poly1305 {
 }
 
 extension SecretStream.XChaCha20Poly1305 {
-    public class PullStream {
+    class PullStream {
         private var state: crypto_secretstream_xchacha20poly1305_state
 
         init?(secretKey: Key, header: Header) {
@@ -74,7 +74,7 @@ extension SecretStream.XChaCha20Poly1305 {
      - Returns: A `PushStreamObject`. The stream header can be obtained by
      calling the `header()` method of that returned object.
      */
-    public func initPush(secretKey: Key) -> PushStream? {
+    func initPush(secretKey: Key) -> PushStream? {
         return PushStream(secretKey: secretKey)
     }
 
@@ -86,7 +86,7 @@ extension SecretStream.XChaCha20Poly1305 {
 
      - Returns: The stream to decrypt messages from.
      */
-    public func initPull(secretKey: Key, header: Header) -> PullStream? {
+    func initPull(secretKey: Key, header: Header) -> PullStream? {
         return PullStream(secretKey: secretKey, header: header)
     }
 }

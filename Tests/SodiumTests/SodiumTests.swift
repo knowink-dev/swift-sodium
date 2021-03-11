@@ -1,5 +1,5 @@
 import XCTest
-import Sodium
+@testable import Sodium
 
 extension String {
     func toData() -> Data? {
