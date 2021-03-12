@@ -9,7 +9,6 @@ let package = Package(
             targets: ["Clibsodium"]),
         .library(
             name: "Sodium",
-            type: .dynamic,
             targets: ["Sodium"]),
     ],
     targets: [
@@ -23,7 +22,8 @@ let package = Package(
             exclude: ["Info.plist"]),
         .testTarget(
             name: "SodiumTests",
-            dependencies: ["Sodium"],
+            dependencies: ["Sodium",
+                           "Clibsodium"],
             exclude: ["Info.plist"]),
     ]
 )
